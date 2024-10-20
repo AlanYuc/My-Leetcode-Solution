@@ -5,7 +5,6 @@
  * [209] 闀垮害鏈�灏忕殑瀛愭暟缁?
  */
 
-
 // @lcpr-template-start
 using namespace std;
 #include <algorithm>
@@ -25,17 +24,21 @@ using namespace std;
 #include <vector>
 // @lcpr-template-end
 // @lc code=start
-class Solution {
+class Solution
+{
 public:
-    int minSubArrayLen(int target, vector<int>& nums) {
+    int minSubArrayLen(int target, vector<int> &nums)
+    {
         int ans = INT32_MAX;
         int start = 0;  // 滑动窗口起始位置
         int sublen = 0; // 滑动窗口内子数组长度
         int sum = 0;    // 滑动窗口内子数组和
-        for (int i = 0; i < nums.size(); i++) {
+        for (int i = 0; i < nums.size(); i++)
+        {
             sum += nums[i];
 
-            while (sum >= target) {
+            while (sum >= target)
+            {
                 sublen = i - start + 1;
                 ans = ans < sublen ? ans : sublen;
                 sum -= nums[start++];
@@ -48,8 +51,6 @@ public:
     }
 };
 // @lc code=end
-
-
 
 /*
 // @lcpr case=start
@@ -65,4 +66,3 @@ public:
 // @lcpr case=end
 
  */
-
