@@ -32,6 +32,8 @@ public:
         dp[2] = 1;
         for(int i=3;i<=n;i++){
             for(int j= 1;j<= i/2;j++){
+                //错误记录
+                //max(dp[i]也要进行一次比较，不然只记录最后一次j的结果，前面计算的最大值会被丢掉
                 dp[i] = max(dp[i] , max(j * (i-j) , j* dp[i-j]));
             }
         }
