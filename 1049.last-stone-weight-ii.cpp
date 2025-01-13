@@ -43,7 +43,8 @@ public:
                 dp[j] = max(dp[j], dp[j - stones[i]] + stones[i]);
             }
         }
-        return sum - dp[target] * 2;
+        //第一个石堆 撞击（减去） 第二个石堆
+        return (sum - dp[target]) - dp[target];
     }
 };
 // @lc code=end
