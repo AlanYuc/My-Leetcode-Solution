@@ -33,6 +33,12 @@ public:
         //后面可以用push_back将一维数组添加进去
         vector<vector<int>> ans;
 
+        //题解中的不同点（用resize构建二维数组）：
+        //二维数组的创建使用vector<vector<int>> ans(numRows);
+        //先创建一个有numRows行的二维数组，
+        //然后用resize重新设置每行大小，再直接赋值，不用push_back
+        //ret[i].resize(i + 1);
+
         for (int i = 0; i < numRows; i++)
         {
             vector<int> row(i + 1);
