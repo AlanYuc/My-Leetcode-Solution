@@ -29,6 +29,8 @@ class Solution
 public:
     int waysToSplitArray(vector<int> &nums)
     {
+        //注意题中的数组个数和每个值的大小，最后几组测试数据的和会超出int范围
+        //因此这里改为long long
         long long sum = 0;
         for (int i = 0; i < nums.size(); i++)
         {
