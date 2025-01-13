@@ -29,6 +29,8 @@ class Solution
 public:
     vector<vector<int>> generate(int numRows)
     {
+        //注意数组创建的格式，以下生成的是空的二维数组
+        //后面可以用push_back将一维数组添加进去
         vector<vector<int>> ans;
 
         for (int i = 0; i < numRows; i++)
