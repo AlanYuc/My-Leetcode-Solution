@@ -29,6 +29,7 @@ class Solution
 public:
     bool canPartition(vector<int> &nums)
     {
+        //01±³°ü
         int sum = 0;
         for (int i = 0; i < nums.size(); i++)
         {
