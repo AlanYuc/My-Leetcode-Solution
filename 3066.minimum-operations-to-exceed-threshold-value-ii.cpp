@@ -29,6 +29,10 @@ class Solution
 public:
     int minOperations(vector<int> &nums, int k)
     {
+        //最终超时
+        //错误记录：1、long long，需要考虑数据超范围的情况
+        //2、需要考虑开始就符合条件，操作数为0的情况
+        //3、中间用冒泡的方式保证数组的顺序，但时间复杂度o（n2），最终有个测试用例超时
         sort(nums.begin(), nums.end());
         vector<long long> vec;
         for (int i = 0; i < nums.size(); i++)
