@@ -31,7 +31,10 @@ public:
     {
         //本题注意事项
         //中间有样例4681，会出现正值溢出（两个数相加超出int范围）
-        //解决方法，
+        //解决方法，将dp数组的类型改为无符号整型unsigned int或者uint64_t
+        //注意，long long不行
+        //原因（截取自leetcode评论区）：
+        //long long有正值溢出，也就是如果正值超过最大值会变成负值，此时leetcode会报错，但是unsigned int 正值超过最大值会变为0，可能leetcode认为这不是错误吧
 
         // 完全背包
         //vector<vector<int>> dp(coins.size(), vector<int>(amount + 1, 0));
