@@ -30,6 +30,9 @@ public:
     int missingNumber(vector<int> &nums)
     {
         sort(nums.begin(), nums.end());
+        //两种情况（从小到大排序）
+        //下标i和对应下标数组元素不等，那就是i
+        //所有一一对应，那就是缺了最大的n
         for (int i = 0; i < nums.size(); i++)
         {
             if (nums[i] != i)
