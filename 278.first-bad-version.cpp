@@ -34,26 +34,41 @@ public:
     {
         int left = 1;
         int right = n;
+        // while (left < right)
+        // {
+        //     int mid = left + (right - left) / 2;
+        //     if (isBadVersion(mid))
+        //     {
+        //         right = mid - 1;
+        //     }
+        //     else
+        //     {
+        //         left = mid + 1;
+        //     }
+        // }
+        // if (!isBadVersion(left))
+        // {
+        //     return left + 1;
+        // }
+        // else
+        // {
+        //     return left;
+        // }
+
+        //优化一次，全部默认左闭右闭的空间
         while (left < right)
         {
             int mid = left + (right - left) / 2;
             if (isBadVersion(mid))
             {
-                right = mid - 1;
+                right = mid;
             }
             else
             {
                 left = mid + 1;
             }
         }
-        if (!isBadVersion(left))
-        {
-            return left + 1;
-        }
-        else
-        {
-            return left;
-        }
+        return left;
     }
 };
 // @lc code=end
